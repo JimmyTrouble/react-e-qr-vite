@@ -1,7 +1,12 @@
+.formContainer {
+  text-align: center;
+}
+
 form {
   min-width: 200px;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 input {
   text-align: center;
