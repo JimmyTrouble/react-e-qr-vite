@@ -9,7 +9,7 @@ function Body() {
   const handleSubmit = (event) => {
     console.log("clicked");
     event.preventDefault();
-    fetch(`${env}`, {
+    fetch(`${env}/q`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json", // We specify that we're sending JSON

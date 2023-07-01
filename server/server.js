@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/qr-images", express.static("qr-images")); // add this line to serve images
 
-app.post("/", (req, res) => {
+app.post("/q", (req, res) => {
   console.log(req.body.text);
   let inputText = req.body.text;
   let qr_png = qr.image(inputText, { type: "png" });
