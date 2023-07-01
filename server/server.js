@@ -9,7 +9,7 @@ const app = express();
 dotenv.config();
 const url = process.env.SERVER_API_URL;
 
-
+//hello
 app.use(cors());
 app.use(express.json());
 app.use("/qr-images", express.static("qr-images")); // add this line to serve images
