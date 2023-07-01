@@ -4,11 +4,12 @@ import "./body.css";
 function Body() {
   const [inputValue, setInputValue] = useState("");
   const [imageURL, setImageURL] = useState("");
+  const env  = import.meta.env.VITE_APP_API_URL;
 
   const handleSubmit = (event) => {
     console.log("clicked");
     event.preventDefault();
-    fetch("http://localhost:3001", {
+    fetch(`${env}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json", // We specify that we're sending JSON

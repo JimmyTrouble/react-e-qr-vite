@@ -1,9 +1,14 @@
 import express from "express";
 import cors from "cors";
 import qr from "qr-image";
+import dotenv from 'dotenv';
 import { createWriteStream } from "fs";
 
 const app = express();
+
+dotenv.config();
+const url = process.env.SERVER_API_URL;
+
 
 app.use(cors());
 app.use(express.json());
@@ -15,7 +20,7 @@ app.post("/", (req, res) => {
   let qr_png = qr.image(inputText, { type: "png" });
   let qr_path = `./qr-images/${inputText}.png`;
   qr_png.pipe(createWriteStream(qr_path));
-  res.send(`http://localhost:3001/qr-images/${inputText}.png`); // Send the image URL path
+  res.send(`${url}/qr-images/${inputText}.png`); // Send the image URL path
 });
 
 app.get("/", (req, res) => {
