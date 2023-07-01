@@ -37,5 +37,4 @@ function Body() {
     </div>
   );
 }
-//hello000
 export default Body;
